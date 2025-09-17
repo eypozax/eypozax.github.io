@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eypozax Store</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="../src/assets/images/widelogo.webp" alt="Eypozax Logo"></a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="apps" class="projects">
+  <!-- JS will inject cards here -->
+</section>
+
+<footer>
+  <p>&copy; 2025 Eypozax. GPL3 copyright.<span>|</span></p>
+</footer>
+
+<script src="store-data.js"></script>
+<script>
+  const grid = document.getElementById('apps');
+  projects.forEach(app => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img src="${app.logo}" alt="${app.name}" class="app-logo">
+      <h3>${app.name}</h3>
+      <p>${app.description}</p>
+      <div class="buttons">
+        <a href="${app.download}"><button>Download</button></a>
+        <a href="${app.source}"><button>Source</button></a>
+        <a href="${app.tutorial}"><button>Tutorial</button></a>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+</script>
+
+</body>
+</html>

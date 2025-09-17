@@ -163,3 +163,30 @@ footer span {
     opacity: 0;
   }
 }
+
+.store {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.store h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-accent);
+}
+
+.store p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--color-accent-light);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-

@@ -4,25 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Basic SEO -->
   <title>Eypozax</title>
   <meta name="description" content="Eypozax — Experimental software studio. Future-coded. Open by design. Projects in Linux, AI, and experimental systems.">
 
-  <!-- Open Graph (link previews) -->
-  <meta property="og:title" content="Eypozax">
-  <meta property="og:description" content="Experimental software studio. Future-coded. Open by design.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://eypozax.github.io/">
-
-
-  <!-- Favicon setup -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="src/assets/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="src/assets/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="src/assets/images/favicon.ico">
   <link rel="manifest" href="site.webmanifest">
 
-  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cutive+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -31,16 +21,17 @@
   <!-- Navigation -->
   <header>
     <div class="logo">
-      <a href="/">
+      <a href="index.html">
         <img src="src/assets/images/widelogo.webp" alt="Eypozax Logo" />
       </a>
     </div>
     <nav>
       <ul>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#featured">Featured</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="store.html">Store</a></li> <!-- new link -->
+        <li><a href="store/store-page.html">Store</a></li>
       </ul>
     </nav>
   </header>
@@ -49,25 +40,22 @@
   <section class="hero">
     <h1>Ideas to Bloom</h1>
     <p>Crafting technology that grows with your ambitions.</p>
-    <a href="#projects"><button>Explore Projects</button></a>
+    <a href="#featured"><button>Explore Featured Apps</button></a>
   </section>
 
-  <!-- Projects -->
+  <!-- Featured Apps -->
+  <section id="featured">
+    <h2>Featured Apps</h2>
+    <div class="projects" id="featured-grid">
+      <!-- JS will inject featured app cards here -->
+    </div>
+  </section>
+
+  <!-- Projects (Full List Preview) -->
   <section id="projects">
     <h2>Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>Swap Manager</h3>
-        <p>A modern Linux swap space manager packaged as a Flatpak.</p>
-      </div>
-      <div class="card">
-        <h3>AI Tools</h3>
-        <p>Offline learning experiments that adapt to user workflows.</p>
-      </div>
-      <div class="card">
-        <h3>Eypozax OS</h3>
-        <p>Minimal, Flatpak-first Linux distro under exploration.</p>
-      </div>
+    <div class="projects" id="projects-grid">
+      <!-- JS will inject all project cards here -->
     </div>
   </section>
 
@@ -90,6 +78,25 @@
   <footer>
     <p>&copy; 2025 Eypozax. All rights reserved <span>|</span></p>
   </footer>
+
+  <!-- JS -->
+  <script src="store/store-data.js"></script>
+  <script>
+    // Featured apps (first 2)
+    const featuredGrid = document.getElementById('featured-grid');
+    const featuredApps = projects.slice(0, 2);
+    featuredApps.forEach(app => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${app.logo}" alt="${app.name}" class="app-logo">
+        <h3>${app.name}</h3>
+        <p>${app.description}</p>
+        <a href="store.html#${app.id}"><button>View in Store</button></a>
+      `;
+      featuredGrid.appendChild(card);
+    });
+  </script>
 
 </body>
 </html>
