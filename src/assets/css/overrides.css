@@ -1,0 +1,60 @@
+.md-header,
+.md-top-app-bar {
+  background-color: transparent !important;
+}
+
+body {
+  background-color: #33101c;
+  color: #dfff00; /* Set font color */
+}
+
+
+/* Ensure Juxtapose images render at equal height and cover the container */
+.juxtapose {
+  /* Responsive height: up to 50vh but no taller than 480px */
+  height: min(50vh, 480px);
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Make images fill the juxtapose height and crop if needed */
+.juxtapose img,
+.juxtapose .juxtapose-image img,
+.juxtapose .juxtapose-handle img {
+  height: 100% !important;
+  width: auto !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  display: block;
+}
+
+/* Force Juxtapose wrapper and its internal elements to a fixed responsive height and ensure images cover */
+.juxtapose,
+.juxtapose .juxtapose-images,
+.juxtapose .juxtapose-image {
+  position: relative !important;
+  height: min(50vh, 480px) !important;
+  max-height: 480px !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* Make internal image wrappers fill and crop */
+.juxtapose .juxtapose-image {
+  display: block !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.juxtapose .juxtapose-image img,
+.juxtapose .juxtapose-image > img,
+.juxtapose img {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  height: auto !important;
+  width: 100% !important;
+  min-height: 100% !important;
+  object-fit: cover !important;
+}

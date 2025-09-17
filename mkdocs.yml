@@ -1,0 +1,50 @@
+site_name: Eypozax Docs
+
+docs_dir: src
+site_dir: docs
+
+nav:
+  - Home: index.md
+  - urplans:
+      - Overview: urplans/index.md
+      - Setup: urplans/setup.md
+      - Usage: urplans/usage.md
+      - Architecture: urplans/architecture.md
+  - SQE:
+      - Overview: SQE/index.md
+      - Syntax:
+          - Examples: SQE/syntax/example.md
+          - Choice: SQE/syntax/choice.md
+          - Index: SQE/syntax/index.md
+          - Page: SQE/syntax/page.md
+          - Print: SQE/syntax/print.md
+          - Title: SQE/syntax/title.md
+          - Functions: SQE/syntax/function.md
+
+theme:
+  name: material
+  logo: assets/images/logo.webp
+  favicon: assets/images/favicon.ico
+  palette:
+    scheme: slate
+    primary: "#3c0463"
+    accent: "#fb5b14"
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.sections
+    - search.highlight
+    - toc.integrate
+
+extra_javascript:
+  - https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js
+
+
+extra_css:
+  - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css
+  - assets/css/overrides.css
+
+markdown_extensions:
+  - attr_list
