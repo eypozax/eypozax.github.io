@@ -1,2 +1,0 @@
-# Documentations, Manuals, and Tutorials
-
