@@ -4,50 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eypozax Store</title>
+  <meta name="description" content="Download Eypozax software including Swap Manager, AI Tools, and Eypozax OS.">
+  
+  <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.ico">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cutive+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+  <!-- Navigation -->
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../assets/images/logo.webp" alt="Eypozax Logo" />
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#featured">Featured</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="store-page.html">Store</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <div class="logo">
-    <a href="index.html"><img src="../src/assets/images/widelogo.webp" alt="Eypozax Logo"></a>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- Store Header -->
+  <section class="hero">
+    <h1>Eypozax Store</h1>
+    <p>Download our software and start experimenting today</p>
+  </section>
 
-<section id="apps" class="projects">
-  <!-- JS will inject cards here -->
-</section>
+  <!-- Apps Grid -->
+  <section>
+    <h2>Available Applications</h2>
+    <div class="projects" id="apps-grid">
+      <!-- JS will inject app cards here -->
+    </div>
+  </section>
 
-<footer>
-  <p>&copy; 2025 Eypozax. GPL3 copyright.<span>|</span></p>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Eypozax. All rights reserved <span>|</span></p>
+  </footer>
 
-<script src="store-data.js"></script>
-<script>
-  const grid = document.getElementById('apps');
-  projects.forEach(app => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      <img src="${app.logo}" alt="${app.name}" class="app-logo">
-      <h3>${app.name}</h3>
-      <p>${app.description}</p>
-      <div class="buttons">
-        <a href="${app.download}"><button>Download</button></a>
-        <a href="${app.source}"><button>Source</button></a>
-        <a href="${app.tutorial}"><button>Tutorial</button></a>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
-</script>
+  <!-- JavaScript -->
+  <script src="store-data.js"></script>
+  <script>
+    const grid = document.getElementById('apps-grid');
 
+    projects.forEach(app => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${app.logo}" alt="${app.name}" class="app-logo">
+        <h3>${app.name}</h3>
+        <p>${app.description}</p>
+        <div class="buttons">
+          <a href="${app.download}" class="button" download>Download</a>
+          <a href="${app.tutorial}" class="button">Documentation</a>
+          <a href="${app.source}" class="button" target="_blank">Source Code</a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
 </body>
 </html>

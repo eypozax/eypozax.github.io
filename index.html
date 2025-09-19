@@ -1,102 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eypozax</title>
+<link rel="stylesheet" href="style.css">
 
-  <title>Eypozax</title>
-  <meta name="description" content="Eypozax — Experimental software studio. Future-coded. Open by design. Projects in Linux, AI, and experimental systems.">
-
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="src/assets/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="src/assets/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="src/assets/images/favicon.ico">
-  <link rel="manifest" href="site.webmanifest">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cutive+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header>
-    <div class="logo">
-      <a href="index.html">
-        <img src="src/assets/images/widelogo.webp" alt="Eypozax Logo" />
-      </a>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#featured">Featured</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="store/store-page.html">Store</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Ideas to Bloom</h1>
-    <p>Crafting technology that grows with your ambitions.</p>
-    <a href="#featured"><button>Explore Featured Apps</button></a>
-  </section>
-
-  <!-- Featured Apps -->
-  <section id="featured">
-    <h2>Featured Apps</h2>
-    <div class="projects" id="featured-grid">
-      <!-- JS will inject featured app cards here -->
-    </div>
-  </section>
-
-  <!-- Projects (Full List Preview) -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects" id="projects-grid">
-      <!-- JS will inject all project cards here -->
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <h2>About Eypozax</h2>
-    <p>Eypozax is an experimental software studio born from Maibloom. We build tools, distros, and AI experiments with a hacker aesthetic—raw, weird, and open-source at heart.</p>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      Reach us at <a href="mailto:hello@eypozax.com">hello@eypozax.com</a><br>
-      or check our work on <a href="https://github.com/maibloom" target="_blank">GitHub</a>.
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Eypozax. All rights reserved <span>|</span></p>
-  </footer>
-
-  <!-- JS -->
-  <script src="store/store-data.js"></script>
-  <script>
-    // Featured apps (first 2)
-    const featuredGrid = document.getElementById('featured-grid');
-    const featuredApps = projects.slice(0, 2);
-    featuredApps.forEach(app => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <img src="${app.logo}" alt="${app.name}" class="app-logo">
-        <h3>${app.name}</h3>
-        <p>${app.description}</p>
-        <a href="store.html#${app.id}"><button>View in Store</button></a>
-      `;
-      featuredGrid.appendChild(card);
-    });
-  </script>
+<section class="hero">
+  <h1>Welcome to <span class="accent">Eypozax</span></h1>
+  <h6>Ideas to bloom.</h6>
+  <a class="button" href="https://eypozax.github.io/eypomarket">Go to Eypomarket</a>
+</section>
 
 </body>
 </html>
